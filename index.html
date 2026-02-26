@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KiriTech | Tiotee Ribabaiti</title>
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card-bg: #161616;
+            --accent: #00d4ff; /* Island Blue */
+            --youtube: #FF0000;
+            --text: #ededed;
+            --secondary: #888;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        /* Hero Section */
+        header {
+            text-align: center;
+            padding: 120px 20px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://i.postimg.cc/vmtB0wDv/Web-Head.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 24px;
+            margin-bottom: 30px;
+            border: 1px solid #333;
+        }
+
+        h1 { 
+            font-size: 4.5rem; 
+            margin: 0; 
+            letter-spacing: 4px; 
+            text-transform: uppercase;
+            text-shadow: 0px 0px 20px rgba(0, 212, 255, 0.5);
+        }
+        
+        .subtitle { 
+            color: var(--accent); 
+            font-weight: 600; 
+            text-transform: uppercase; 
+            font-size: 1rem; 
+            letter-spacing: 2px;
+            margin-top: 10px;
+        }
+
+        /* Bento Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: minmax(220px, auto);
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid #222;
+            padding: 30px;
+            border-radius: 24px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+        }
+
+        .large { grid-column: span 2; }
+        .tall { grid-row: span 2; }
+
+        h3 { margin-top: 0; color: var(--accent); font-size: 1.4rem; }
+        p { color: var(--secondary); line-height: 1.6; font-size: 1rem; margin-bottom: 15px; }
+
+        /* Skills Progress Bars */
+        .skill-container { margin-bottom: 15px; }
+        .skill-name { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 5px; color: var(--text); }
+        .skill-bar { height: 8px; background: #222; border-radius: 4px; overflow: hidden; }
+        .skill-progress { height: 100%; background: var(--accent); border-radius: 4px; }
+
+        .tag {
+            display: inline-block;
+            background: #222;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .btn-group { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--accent);
+            color: #000;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+
+        .btn.yt { background: var(--youtube); color: white; }
+        .btn:hover { opacity: 0.8; }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #000;
+            margin-top: 15px;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 850px) {
+            .grid { grid-template-columns: 1fr; }
+            .large, .tall { grid-column: span 1; grid-row: auto; }
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>KiriTech</h1>
+        <div class="subtitle">Musician • AI Designer • Arborist</div>
+    </header>
+
+    <div class="grid">
+        <div class="card large">
+            <div>
+                <h3>🎵 Island Sound Production</h3>
+                <p>Vocalist & Songwriter blending authentic Island rhythms with modern tech. From recording to final master.</p>
+                <div class="video-wrapper">
+                    <iframe src="https://youtu.be/WbZaGicar8M?si=mptNLyAvRrjSQEha" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div style="margin-top:20px;">
+                <div class="tag">Vocalist</div> <div class="tag">Mixing</div> <div class="tag">Island Style</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>🚀 Technical Mastery</h3>
+            <div class="skill-container">
+                <div class="skill-name"><span>Music Production</span><span>95%</span></div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill-container">
+                <div class="skill-name"><span>AI & Web Design</span><span>90%</span></div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill-container">
+                <div class="skill-name"><span>Electronics Repair</span><span>85%</span></div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+            </div>
+            <div class="skill-container">
+                <div class="skill-name"><span>Arboriculture</span><span>100%</span></div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 100%;"></div></div>
+            </div>
+        </div>
+
+        <div class="card tall">
+            <div>
+                <h3>🌳 Arborist Services</h3>
+                <p>Professional tree work, technical climbing, and safety management. Solving complex problems in the canopy.</p>
+                <p>Hard work and physical discipline are at the core of my brand.</p>
+            </div>
+            <div>
+                <div class="tag">Safety Pro</div>
+                <div class="tag">Technical Climbing</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <h3>💻 Digital Design</h3>
+                <p>Custom web builds and AI-generated assets for creators and businesses.</p>
+            </div>
+            <div class="tag">AI Designer</div> <div class="tag">Web Dev</div>
+        </div>
+
+        <div class="card">
+            <div>
+                <h3>🛠️ Hardware Specialist</h3>
+                <p>Troubleshooting electronics and mechanical repairs. Hands-on problem solving.</p>
+            </div>
+            <div class="tag">Tech Support</div>
+        </div>
+
+        <div class="card large">
+            <div>
+                <h3>🚀 Let's Work Together</h3>
+                <p>Reach out for music production, web builds, or arborist consulting.</p>
+            </div>
+            <div class="btn-group">
+                <a href="mailto:kiritechexpoter@gmail.com" class="btn">Message KiriTech</a>
+                <a href="https://www.youtube.com/@tioteeribabaiti" target="_blank" class="btn yt">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/></svg>
+                    YouTube
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
